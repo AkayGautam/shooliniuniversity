@@ -35,13 +35,8 @@ class FindPrograme extends Component {
     render() {
       return (
         <div>
-          <form onSubmit={this.submit}>
-            <input onChange={this.changeTerm}/>
-            <Button type="submit" bsStyle="primary">Find</Button>
-          </form>
-          {this.state.results.length > 0 &&
-            
-           <Link to={{pathname: '/results', state: { results: this.state.results } }}> </Link>           }
+        
+                
         </div>
       );
     }

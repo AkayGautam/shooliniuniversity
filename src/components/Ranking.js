@@ -42,7 +42,7 @@ const Ranking = () => {
                             <h4> that matter - 2021-22 </h4>
                         </div>
                         <div data-aos="flip-up" className="introVDO">
-                        <iframe   src="https://www.youtube.com/embed/NdBAPZxr4Pg?controls=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                        <iframe   src="https://www.youtube.com/embed/NdBAPZxr4Pg?controls=0" title="YouTube video player"  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" ></iframe>
                         </div>
                     </Col>
                      <Col md="7">
