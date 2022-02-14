@@ -1,0 +1,26 @@
+[
+    {
+        "id": "1",
+        "uniqClass": "box-icon box1",
+        "boxIcon": "flaticon-thumbs-like",
+        "title": 3000,
+        "subTitle": "Placements",
+        "showcase" : "in Top Companies " 
+    },
+    {
+        "id": "2",
+        "uniqClass": "box-icon box2",
+        "boxIcon": "flaticon-reading",
+        "title": 250,
+        "subTitle": "Global Alliances",
+        "showcase" : "with top universities " 
+    },
+    {
+        "id": "3",
+        "uniqClass": "box-icon box3",
+        "boxIcon": "flaticon-teacher",
+        "title": 800,
+        "subTitle": "Patents Filed",
+        "showcase" : "Among the highest in India " 
+    }
+]

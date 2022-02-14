@@ -1,0 +1,253 @@
+{
+    "secTitle": "We Do What We Love To Do. Find the Best Course To Fit Your Needs.",
+    "programes": [
+        {
+            "categoryName": "cse",
+            "schoolName" : "abc",
+            "trade": "BTech",
+            "programes_list": [
+                {  "programe_title": "Biotechnology"   },
+                {  "programe_title": "Microbiology"   },
+                {  "programe_title": "Genetics"   }
+
+        ],
+            "product_detail":[
+             {
+                "id": "1",
+                "targetId": "desi",
+                "imgUrl": "course-1.jpg",
+                "authorImg": "author.jpg",
+                "courseTitle": "Php & mySql Programming",
+                "courseDesc": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Tenetur accusamus hic ea in autem debitis minima.",
+                "courseLink": "/course-details"
+            },
+            {
+                "id": "2",
+                "targetId": "desi",
+                "imgUrl": "course-2.jpg",
+                "authorImg": "author.jpg",
+                "courseTitle": "Php & mySql Programming",
+                "courseDesc": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Tenetur accusamus hic ea in autem debitis minima.",
+                "courseLink": "/course-details"
+            },
+            {
+                "id": "3",
+                "targetId": "desi",
+                "imgUrl": "course-3.jpg",
+                "authorImg": "author.jpg",
+                "courseTitle": "Php & mySql Programming",
+                "courseDesc": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Tenetur accusamus hic ea in autem debitis minima.",
+                "courseLink": "/course-details"
+            }
+            
+        ]
+            
+        },
+        {
+            "categoryName": "biotechnology",
+            "schoolName" : "def",
+            "trade": "MTech",
+            "programes_list": [
+                {  "programe_title": "Biotechnology"   },
+                {  "programe_title": "Microbiology"   },
+                {  "programe_title": "Genetics"   }
+
+        ],
+            "product_detail":[
+             {
+                "id": "4",
+                "targetId": "desi",
+                "imgUrl": "course-3.jpg",
+                "authorImg": "author.jpg",
+                "courseTitle": "Php & mySql Programming",
+                "courseDesc": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Tenetur accusamus hic ea in autem debitis minima.",
+                "courseLink": "/course-details"
+            },
+            {
+                "id": "5",
+                "targetId": "desi",
+                "imgUrl": "course-2.jpg",
+                "authorImg": "author.jpg",
+                "courseTitle": "Php & mySql Programming",
+                "courseDesc": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Tenetur accusamus hic ea in autem debitis minima.",
+                "courseLink": "/course-details"
+            },
+            {
+                "id": "6",
+                "targetId": "desi",
+                "imgUrl": "course-1.jpg",
+                "authorImg": "author.jpg",
+                "courseTitle": "Php & mySql Programming",
+                "courseDesc": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Tenetur accusamus hic ea in autem debitis minima.",
+                "courseLink": "/course-details"
+            }
+            
+        ]
+            
+        },
+        {
+            "categoryName": "pharma-science",
+            "schoolName" : "ghi",
+            "trade": "BTech",
+            "programes_list": [
+                {  "programe_title": "Biotechnology"   },
+                {  "programe_title": "Microbiology"   },
+                {  "programe_title": "Genetics"   }
+
+        ],
+            "product_detail":[
+             {
+                "id": "7",
+                "targetId": "desi",
+                "imgUrl": "course-3.jpg",
+                "authorImg": "author.jpg",
+                "courseTitle": "Php & mySql Programming",
+                "courseDesc": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Tenetur accusamus hic ea in autem debitis minima.",
+                "courseLink": "/course-details"
+            },
+            {
+                "id": "8",
+                "targetId": "desi",
+                "imgUrl": "course-2.jpg",
+                "authorImg": "author.jpg",
+                "courseTitle": "Php & mySql Programming",
+                "courseDesc": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Tenetur accusamus hic ea in autem debitis minima.",
+                "courseLink": "/course-details"
+            },
+            {
+                "id": "9",
+                "targetId": "desi",
+                "imgUrl": "course-1.jpg",
+                "authorImg": "author.jpg",
+                "courseTitle": "Php & mySql Programming",
+                "courseDesc": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Tenetur accusamus hic ea in autem debitis minima.",
+                "courseLink": "/course-details"
+            }  
+        ]
+            
+        },
+        {
+            "categoryName": "food-technology",
+            "schoolName" : "jkl",
+            "trade": "BTech,PHD",
+            "programes_list": [
+                {  "programe_title": "Biotechnology"   },
+                {  "programe_title": "Microbiology"   },
+                {  "programe_title": "Genetics"   }
+
+        ],
+            "product_detail":[
+             {
+                "id": "10",
+                "targetId": "desi",
+                "imgUrl": "course-3.jpg",
+                "authorImg": "author.jpg",
+                "courseTitle": "Php & mySql Programming",
+                "courseDesc": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Tenetur accusamus hic ea in autem debitis minima.",
+                "courseLink": "/course-details"
+            },
+            {
+                "id": "11",
+                "targetId": "desi",
+                "imgUrl": "course-2.jpg",
+                "authorImg": "author.jpg",
+                "courseTitle": "Php & mySql Programming",
+                "courseDesc": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Tenetur accusamus hic ea in autem debitis minima.",
+                "courseLink": "/course-details"
+            },
+            {
+                "id": "12",
+                "targetId": "desi",
+                "imgUrl": "course-1.jpg",
+                "authorImg": "author.jpg",
+                "courseTitle": "Php & mySql Programming",
+                "courseDesc": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Tenetur accusamus hic ea in autem debitis minima.",
+                "courseLink": "/course-details"
+            }  
+        ]
+            
+        },
+        {
+            "categoryName": "engineering",
+            "schoolName" : "mno",
+            "trade": "BTech",
+            "programes_list": [
+                {  "programe_title": "Biotechnology"   },
+                {  "programe_title": "Microbiology"   },
+                {  "programe_title": "Genetics"   }
+
+        ],
+            "product_detail":[
+             {
+                "id": "13",
+                "targetId": "desi",
+                "imgUrl": "course-3.jpg",
+                "authorImg": "author.jpg",
+                "courseTitle": "Php & mySql Programming",
+                "courseDesc": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Tenetur accusamus hic ea in autem debitis minima.",
+                "courseLink": "/course-details"
+            },
+            {
+                "id": "14",
+                "targetId": "desi",
+                "imgUrl": "course-2.jpg",
+                "authorImg": "author.jpg",
+                "courseTitle": "Php & mySql Programming",
+                "courseDesc": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Tenetur accusamus hic ea in autem debitis minima.",
+                "courseLink": "/course-details"
+            },
+            {
+                "id": "15",
+                "targetId": "desi",
+                "imgUrl": "course-1.jpg",
+                "authorImg": "author.jpg",
+                "courseTitle": "Php & mySql Programming",
+                "courseDesc": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Tenetur accusamus hic ea in autem debitis minima.",
+                "courseLink": "/course-details"
+            }  
+        ]
+            
+        },
+        {
+            "categoryName": "management",
+            "schoolName" : "pqr",
+            "trade": "BTech, Mtech",
+            "programes_list": [
+                {  "programe_title": "Biotechnology"   },
+                {  "programe_title": "Microbiology"   },
+                {  "programe_title": "Genetics"   }
+
+        ],
+            "product_detail":[
+             {
+                "id": "16",
+                "targetId": "desi",
+                "imgUrl": "course-3.jpg",
+                "authorImg": "author.jpg",
+                "courseTitle": "Php & mySql Programming",
+                "courseDesc": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Tenetur accusamus hic ea in autem debitis minima.",
+                "courseLink": "/course-details"
+            },
+            {
+                "id": "17",
+                "targetId": "desi",
+                "imgUrl": "course-2.jpg",
+                "authorImg": "author.jpg",
+                "courseTitle": "Php & mySql Programming",
+                "courseDesc": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Tenetur accusamus hic ea in autem debitis minima.",
+                "courseLink": "/course-details"
+            },
+            {
+                "id": "18",
+                "targetId": "desi",
+                "imgUrl": "course-1.jpg",
+                "authorImg": "author.jpg",
+                "courseTitle": "Php & mySql Programming",
+                "courseDesc": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Tenetur accusamus hic ea in autem debitis minima.",
+                "courseLink": "/course-details"
+            }  
+        ]
+            
+        }
+    ]
+}

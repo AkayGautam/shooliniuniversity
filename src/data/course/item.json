@@ -1,0 +1,42 @@
+{
+    "data": [
+        {
+            "id": "cat_1ypbroE658n4ea",
+            "parent_id": null,
+            "slug": "shoes",
+            "name": "Shoes and Footwear",
+            "description": "Get great deals on shoes",
+            "products": 0,
+            "created": 1637777886,
+            "updated": 1637777886,
+            "meta": {
+                "season": "summer"
+            },
+            "assets": []
+        },
+        {
+            "id": "cat_1ypbroE658n4ea",
+            "parent_id": null,
+            "slug": "shoes",
+            "name": "Shoes and Footwear",
+            "description": "Get great deals on shoes",
+            "products": 0,
+            "created": 1637777886,
+            "updated": 1637777886,
+            "meta": {
+                "season": "summer"
+            },
+            "assets": []
+        }
+    ],
+    "meta": {
+        "pagination": {
+            "total": 2,
+            "count": 2,
+            "per_page": 2,
+            "current_page": 1,
+            "total_pages": 1,
+            "links": {}
+        }
+    }
+}

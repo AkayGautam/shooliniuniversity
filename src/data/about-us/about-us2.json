@@ -1,0 +1,21 @@
+{
+    "secTitle": "A Top-Ranked Indian University",
+    "secDesc": "A not-for-profit multi-disciplinary private university, Shoolini has a unique research and innovation-led model. We believe that a great university drives cutting-edge knowledge and innovation, while working for the social and economic upliftment of the community at the same time. ",
+    "dataList": [
+        {
+            "iconTitle": "Best Quality Courses",
+            "iconSubtitle": "NIRF Rank: Rank 89 among universities | Overall-101-150 | Pharmacy: 36 | Management: 76-100 | Engineering: 103"
+        },
+        {
+            "iconTitle": "Best Quality Courses",
+            "iconSubtitle": "We have an H-Index of > 80. This means 80 papers have been cited 80 times"
+        },
+        {
+            "iconTitle": "Best Quality Courses",
+            "iconSubtitle": "715+ students have filed patents. Our aim is to have each student file a patent, 180+ courses with cutting-edge specialisations"
+        }
+    ],
+    "aboutImageOne": "about-2.jpg",
+    "aboutImageTwo": "about-3.jpg",
+    "experianceYear": "15"
+}

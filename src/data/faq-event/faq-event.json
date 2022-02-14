@@ -1,0 +1,59 @@
+{
+    "eventDataList": [
+        {
+            "id": "1",
+            "ranking_logo" : "../../assets/images/qs-ranking.png",
+            "eventDate": "2022",
+            "eventTitle": "2020 admidion fair going on this week",
+            "eventTime": "5:30pm - 7.00pm",
+            "eventLocation": "Newyork,NY.",
+            "eventdesc": "Lorem ipsum dolor sit amet consectetur. Como Ssee hou",
+            "eventLink": "/event-details"
+        },
+        {
+            "id": "2",
+            "eventTitle": "2020 admidion fair going on this week",
+            "eventTime": "5:30pm - 7.00pm",
+            "eventLocation": "Newyork,NY.",
+            "eventdesc": "Lorem ipsum dolor sit amet consectetur. Como Ssee hou",
+            "eventLink": "/event-details"
+        },
+        {
+            "id": "3",
+            "eventTitle": "2020 admidion fair going on this week",
+            "eventTime": "5:30pm - 7.00pm",
+            "eventLocation": "Newyork,NY.",
+            "eventdesc": "Lorem ipsum dolor sit amet consectetur. Como Ssee hou",
+            "eventLink": "/event-details"
+        }
+    ],
+    "faqDataList": [
+        {
+            "id": "1",
+            "ranking_logo" : "../../assets/images/nirf.png",
+            "eventDate": "2021",
+            "eventTitle": "2020 admidion fair going on this week",
+            "eventTime": "5:30pm - 7.00pm",
+            "eventLocation": "Newyork,NY.",
+            "eventdesc": "Lorem ipsum dolor sit amet consectetur. Como Ssee hou",
+            "eventLink": "/event-details"
+        },
+        {
+            "id": "2",
+            "eventTitle": "2020 admidion fair going on this week",
+            "ranking_logo" : "../../assets/images/mhrd.png",
+            "eventTime": "5:30pm - 7.00pm",
+            "eventLocation": "Newyork,NY.",
+            "eventdesc": "Lorem ipsum dolor sit amet consectetur. Como Ssee hou",
+            "eventLink": "/event-details"
+        },
+        {
+            "id": "3",
+            "eventTitle": "2020 admidion fair going on this week",
+            "eventTime": "5:30pm - 7.00pm",
+            "eventLocation": "Newyork,NY.",
+            "eventdesc": "Lorem ipsum dolor sit amet consectetur. Como Ssee hou",
+            "eventLink": "/event-details"
+        }
+    ]
+}

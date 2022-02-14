@@ -1,0 +1,77 @@
+{
+    "secTitle": "Find the Best Programmes To Fit Your Needs.",
+    "dataList": [
+        {
+            "id": "1",
+            "imgUrl": "course-1.jpg",
+            "authorImg": "author.jpg",
+            "authorName": "John Doe",
+            "authorCourses": "13 Courses",
+            "eligibility": "10+2",
+            "eligibilityTitle": "Eligibility",
+            "courseTitle": "Journalism & Mass Communication",
+            "courseDesc": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Tenetur accusamus hic ea in autem debitis minima.",
+            "courseLink": "/course-details"
+        }, 
+        {
+            "id": "2",
+            "imgUrl": "course-2.jpg",
+            "authorImg": "author.jpg",
+            "authorName": "Jara Sen",
+            "authorCourses": "21 Courses",
+            "eligibility": "10+2",
+            "eligibilityTitle": "Eligibility",
+            "courseTitle": "Pharmaceutical Sciences",
+            "courseDesc": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Tenetur accusamus hic ea in autem debitis minima.",
+            "courseLink": "/course-details"
+        },
+        {
+            "id": "3",
+            "imgUrl": "course-3.jpg",
+            "authorImg": "author.jpg",
+            "authorName": "Kim Chang",
+            "authorCourses": "26 Courses",
+            "eligibility": "10+2",
+            "eligibilityTitle": "Eligibility",
+            "courseTitle": "Hotel Management",
+            "courseDesc": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Tenetur accusamus hic ea in autem debitis minima.",
+            "courseLink": "/course-details"
+        },
+        {
+            "id": "4",
+            "imgUrl": "course-4.jpg",
+            "authorImg": "author.jpg",
+            "authorName": "Jim Hunt",
+            "authorCourses": "09 Courses",
+            "eligibility": "10+2",
+            "eligibilityTitle": "Eligibility",
+            "courseTitle": "Computer Science Engineering (CSE)",
+            "courseDesc": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Tenetur accusamus hic ea in autem debitis minima.",
+            "courseLink": "/course-details"
+        },
+        {
+            "id": "5",
+            "imgUrl": "course-3.jpg",
+            "authorImg": "author.jpg",
+            "authorName": "Jim Hunt",
+            "authorCourses": "09 Courses",
+            "eligibility": "10+2",
+            "eligibilityTitle": "Eligibility",
+            "courseTitle": "Management Sciences",
+            "courseDesc": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Tenetur accusamus hic ea in autem debitis minima.",
+            "courseLink": "/course-details"
+        },
+        {
+            "id": "6",
+            "imgUrl": "course-2.jpg",
+            "authorImg": "author.jpg",
+            "authorName": "Jim Hunt",
+            "authorCourses": "09 Courses",
+            "eligibility": "10+2",
+            "eligibilityTitle": "Eligibility",
+            "courseTitle": "Biotechnology",
+            "courseDesc": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Tenetur accusamus hic ea in autem debitis minima.",
+            "courseLink": "/course-details"
+        }
+    ]
+}
