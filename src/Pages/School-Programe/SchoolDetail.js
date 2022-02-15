@@ -1,8 +1,7 @@
-import React, { useEffect, Component, Fragment, useState } from 'react';
-import { Link } from 'react-router-dom';
+import React, { useEffect } from 'react';
 import { Container, Row, Col } from 'react-bootstrap';
 import { Styles } from "./style/programmes";
-import Aos from 'aos';
+// import Aos from 'aos';
 import 'aos/dist/aos.css';
 import Header from '../../components/Header';
 import Footer from '../../components/Footer';

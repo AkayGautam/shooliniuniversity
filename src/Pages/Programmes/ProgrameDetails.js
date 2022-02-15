@@ -74,7 +74,7 @@ function ProgrameDetails(props) {
 
 
 
-    console.log(props, "query")
+    // console.log(props, "query")
 
     const [ddata, setDdata] = useState([]);
     let query = useQuery();
@@ -117,7 +117,7 @@ function ProgrameDetails(props) {
     }, []);
     var result_d = [];
     result_d = ddata?.success;
-    console.log(result_d, "dddata")
+    // console.log(result_d, "dddata")
     const postGru = result_d && result_d[0]
     const imgData = result_d && result_d
 

@@ -1,7 +1,5 @@
-import { render, screen } from '@testing-library/react';
-import App from './App';
+
 import Header from './components/Header';
-import HeroSlider from './components/HeroSlider';
 import React from 'react'
 import IconBox from './components/IconBox';
 import Footer from './components/Footer';

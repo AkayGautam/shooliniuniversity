@@ -1,4 +1,4 @@
-import logo from './logo.svg';
+
 import './App.css';
 //import ScrollToTop from './helper/ScrollToTop';
 //import { GlobalStyle } from "./components/common/styles/global";
@@ -10,7 +10,7 @@ import HistoryPage from './Pages/History/History';
 import Undergraduate from './Pages/Programmes/Undergraduate/Undergraduate';
 import Postgraduate from './Pages/Programmes/Postgraduate/Postgraduate';
 import Doctoral from './Pages/Programmes/Doctoral/Doctoral';
-import { Route,  Link, Routes } from "react-router-dom";
+import { Route, Routes } from "react-router-dom";
 import Placements from './Pages/Placements/Placements';
 import AdmissionProcess from './Pages/Admission/Admission-Process/AdmissionProcess';
 import EducationSystem from './Pages/Admission/Education-System/EducationSystem';

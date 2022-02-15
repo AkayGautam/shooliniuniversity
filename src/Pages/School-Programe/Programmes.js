@@ -1,12 +1,10 @@
-import React, { useEffect, Component, Fragment, useState } from 'react';
-import Datas from '../../data/course/item.json'; 
+import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Container, Row, Col } from 'react-bootstrap';
 import { Styles } from "./style/programmes";
 import Aos from 'aos';
 import 'aos/dist/aos.css';
 import FindPrograme from '../../components/FindPrograme';
-import SchoolProgramDetail from '../../components/Dialogs/SchoolProgramDetail';
 
 const Programmes = () => {
 
@@ -117,7 +115,7 @@ const Programmes = () => {
                                                 <li> Cloud Computing </li>
                                             </ul>
                                             <div className="featured_img">
-                                                <img className="img-fluid" src= "assets/images/p1.jpg" />
+                                                <img className="img-fluid" src= "assets/images/p1.jpg" alt=""/>
                                                 <Link to="/" > See ALl Programs</Link>
                                             </div>
                                         </div>
@@ -139,7 +137,7 @@ const Programmes = () => {
                                                 <li> Cloud Computing </li>
                                             </ul>
                                             <div className="featured_img">
-                                                <img className="img-fluid" src= "assets/images/p1.jpg" />
+                                                <img className="img-fluid" alt="" src= "assets/images/p1.jpg" />
                                                 <Link to="/" > See ALl Programs</Link>
                                             </div>
                                         </div>
@@ -161,7 +159,7 @@ const Programmes = () => {
                                                 <li> Cloud Computing </li>
                                             </ul>
                                             <div className="featured_img">
-                                                <img className="img-fluid" src= "assets/images/p1.jpg" />
+                                                <img className="img-fluid" alt="" src= "assets/images/p1.jpg" />
                                                 <Link to="/" > See ALl Programs</Link>
                                             </div>
                                         </div>
@@ -183,7 +181,7 @@ const Programmes = () => {
                                                 <li> Cloud Computing </li>
                                             </ul>
                                             <div className="featured_img">
-                                                <img className="img-fluid" src= "assets/images/p1.jpg" />
+                                                <img alt="" className="img-fluid" src= "assets/images/p1.jpg" />
                                                 <Link to="/" > See ALl Programs</Link>
                                             </div>
                                         </div>
@@ -204,7 +202,7 @@ const Programmes = () => {
                                                 <li> Cloud Computing </li>
                                             </ul>
                                             <div className="featured_img">
-                                                <img className="img-fluid" src= "assets/images/p1.jpg" />
+                                                <img alt="" className="img-fluid" src= "assets/images/p1.jpg" />
                                                 <Link to="/" > See ALl Programs</Link>
                                             </div>
                                         </div>
@@ -224,28 +222,7 @@ const Programmes = () => {
                                                 <li> Cloud Computing </li>
                                             </ul>
                                             <div className="featured_img">
-                                                <img className="img-fluid" src= "assets/images/p1.jpg" />
-                                                <Link to="/" > See ALl Programs</Link>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </Col>
-
-                                <Col md="4">
-                                    <div data-aos="fade-up" className="programme_card">
-                                        <div className="school_name">
-                                            <span> YOGANANDA SCHOOL of AI,<br />Computers and Data Science   </span>
-                                        </div>
-                                        <div className="programme_detail">
-                                            <h3> Computer Science Engineering </h3>
-                                            <h5> BTech | MTech | PhD </h5>
-                                            <ul class="programme_list">
-                                                <li> AI /Machine Learning </li>
-                                                <li> Big Data Analytics </li>
-                                                <li> Cloud Computing </li>
-                                            </ul>
-                                            <div className="featured_img">
-                                                <img className="img-fluid" src= "assets/images/p1.jpg" />
+                                                <img alt="" className="img-fluid" src= "assets/images/p1.jpg" />
                                                 <Link to="/" > See ALl Programs</Link>
                                             </div>
                                         </div>
@@ -266,7 +243,28 @@ const Programmes = () => {
                                                 <li> Cloud Computing </li>
                                             </ul>
                                             <div className="featured_img">
-                                                <img className="img-fluid" src= "assets/images/p1.jpg" />
+                                                <img alt="" className="img-fluid" src= "assets/images/p1.jpg" />
+                                                <Link to="/" > See ALl Programs</Link>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </Col>
+
+                                <Col md="4">
+                                    <div data-aos="fade-up" className="programme_card">
+                                        <div className="school_name">
+                                            <span> YOGANANDA SCHOOL of AI,<br />Computers and Data Science   </span>
+                                        </div>
+                                        <div className="programme_detail">
+                                            <h3> Computer Science Engineering </h3>
+                                            <h5> BTech | MTech | PhD </h5>
+                                            <ul class="programme_list">
+                                                <li> AI /Machine Learning </li>
+                                                <li> Big Data Analytics </li>
+                                                <li> Cloud Computing </li>
+                                            </ul>
+                                            <div className="featured_img">
+                                                <img alt="" className="img-fluid" src= "assets/images/p1.jpg" />
                                                 <Link to="/" > See ALl Programs</Link>
                                             </div>
                                         </div>

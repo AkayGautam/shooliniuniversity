@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import Datas from '../../data/course/popular.json';
 import { Link } from 'react-router-dom';
 import { Styles } from './style/programmes';

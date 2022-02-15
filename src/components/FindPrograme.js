@@ -1,8 +1,5 @@
 import axios from 'axios';
 import React, {Component} from 'react';
-import {Button} from 'react-bootstrap';
-import Results from './Result';
-import { Link } from 'react-router-dom';
 
 class FindPrograme extends Component {
     constructor(props) {

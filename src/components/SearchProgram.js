@@ -32,7 +32,7 @@ const SearchProgram = () => {
       .then((response) => response.json())
       .then((res) => setPgata(res))
   }, []);
-  console.log(pgdata,"pgdata")
+  // console.log(pgdata,"pgdata")
 
   useEffect(() => {
     fetch('https://shooliniuniversity.com/programAPI',
@@ -70,14 +70,14 @@ const SearchProgram = () => {
   result_g = gdata?.success;
   result_d = ddata?.success;
 
-  console.log(result_g);
-  console.log(result_pg);
-  console.log(result_d);
+  // console.log(result_g);
+  // console.log(result_pg);
+  // console.log(result_d);
 
  const [prog,setProg] =  useState(null)
  
  const progchanged = (e)=>{
-   console.log(prog,"prog")
+  //  console.log(prog,"prog")
 setProg(e.target?.value)
 
 
