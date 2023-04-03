@@ -1,134 +1,123 @@
-import React, { Component, useState, useEffect } from 'react';
-import { Container, Row, Col, Form } from 'react-bootstrap';
+import React, { useState, useEffect } from "react";
+import { Container, Row, Col, Form } from "react-bootstrap";
 import { Styles } from "./common/styles/searchFilter";
-import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
-import 'react-tabs/style/react-tabs.css';
-import { Link } from 'react-router-dom';
+import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
+import "react-tabs/style/react-tabs.css";
+import Link from "next/link";
+
+export const SearchProgramApi = async () => {
+  console.log("SearchProgramApi");
+  const reqType = ["undergraduate", "postgraduate", "doctor"];
+  const reqPromise = Array(3)
+    .fill()
+    .map((_, i) => {
+      const body = JSON.stringify({
+        auth: "shoolini@999",
+        [reqType[i]]: i + 1,
+      });
+      return fetch("https://shooliniuniversity.com/media/programAPI", {
+        method: "post",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body,
+      });
+    });
+
+  const [pgdata, gdata, ddata] = await Promise.all(reqPromise);
+
+  const result_pg = await pgdata.json();
+  const result_g = await gdata.json();
+  const result_d = await ddata.json();
+
+
+
+  const result = {
+    result_pg: result_pg.success,
+    result_g: result_g.success,
+    result_d: result_d.success,
+  };
+  
+  return result;
+};
 
 
 
 const SearchProgram = () => {
-  
-  const [pgdata, setPgata] = useState([]);
-  const [gdata, setGdata] = useState([]);
-  const [ddata, setDdata] = useState([]);
-
-  var result_pg = [];
-  var result_g = [];
-  var result_d = [];
+  const [searchProgram, setSearchProgram] = useState({
+    result_pg: [],
+    result_g: [],
+    result_d: [],
+  });
+  const [prog, setProg] = useState();
 
   useEffect(() => {
-    fetch('https://shooliniuniversity.com/programAPI',
-      {
-        method: "post",
-        headers: new Headers({
-          'Content-Type': 'application/json'
-          // 'Content-Type': 'application/x-www-form-urlencoded',
-        }),
-        body: JSON.stringify({ auth: "shoolini@999", undergraduate: 1 })
-      },
-
-    )
-      .then((response) => response.json())
-      .then((res) => setPgata(res))
-  }, []);
-  // console.log(pgdata,"pgdata")
-
-  useEffect(() => {
-    fetch('https://shooliniuniversity.com/programAPI',
-      {
-        method: "post",
-        headers: new Headers({
-          'Content-Type': 'application/json'
-          // 'Content-Type': 'application/x-www-form-urlencoded',
-        }),
-        body: JSON.stringify({ auth: "shoolini@999", postgraduate: 2 })
-      },
-    )
-      .then((response) => response.json())
-      .then((res) => setGdata(res))
+    console.log("useEffect");
+    const fetchProgram = async () => {
+      const data = await SearchProgramApi();
+      setSearchProgram(data);
+    };
+    fetchProgram();
   }, []);
 
-  useEffect(() => {
-    fetch('https://shooliniuniversity.com/programAPI',
-      {
-        method: "post",
-        headers: new Headers({
-          'Content-Type': 'application/json'
-          // 'Content-Type': 'application/x-www-form-urlencoded',
-        }),
-        body: JSON.stringify({ auth: "shoolini@999", doctor: 3 })
-      },
-
-    )
-      .then((response) => response.json())
-      .then((res) => setDdata(res))
-  
-  }, []);
-
-  result_pg = pgdata?.success;
-  result_g = gdata?.success;
-  result_d = ddata?.success;
-
-  // console.log(result_g);
-  // console.log(result_pg);
-  // console.log(result_d);
-
- const [prog,setProg] =  useState(null)
- 
- const progchanged = (e)=>{
-  //  console.log(prog,"prog")
-setProg(e.target?.value)
-
-
- }
-
+  const progchanged = (e) => {
+    setProg(e.target?.value);
+  };
 
   function PgradCoursesList(props) {
     return (
-      <p className="d-md-flex form-control mt-4">
-        <select value={prog} onChange={progchanged}> 
-          <option value="">Select programe</option>
-          {result_pg?.map((data,index) => (
-            <option key={index} value={data?.id}> {data?.title}
-             </option>
+      <div className="d-md-flex form-control mt-md-4">
+        <select className="selectpicker" value={prog} onChange={progchanged}>
+          <option value="">Select program</option>
+          {searchProgram.result_pg?.map((data, index) => (
+            <option key={index} value={data?.slug}>
+              {data?.title}
+            </option>
           ))}
         </select>
         <span className="input-msg2"></span>
-        <Link to={`/programe-detail?id=${prog}`} className="detailView"><i className="las la-eye mr-2"></i>View Detail</Link>
-
-      </p>
+        <Link href={`/${prog ? prog : ""}`} className="detailView">
+          <i className="las la-eye mr-2"></i> View Details
+        </Link>
+      </div>
     );
   }
 
   function GradCoursesList(props) {
     return (
-      <p className="d-md-flex form-control mt-4">
-        <select value={prog} onChange={progchanged} >
-          <option value="">Select programe</option>
-          {result_g?.map((data,index) => (
-            <option key={index} value={data?.id}> {data?.title} </option>
+      <div className="d-md-flex form-control mt-md-4">
+        <select className="selectpicker" value={prog} onChange={progchanged}>
+          <option value="">Select program</option>
+          {searchProgram.result_g?.map((data, index) => (
+            <option key={index} value={data?.slug}>
+              {data?.title}
+            </option>
           ))}
         </select>
         <span className="input-msg2"></span>
-        <Link to={`/programe-detail?id=${prog}`} className="detailView"><i className="las la-eye mr-2"></i>View Detail</Link>
-      </p>
+        <Link href={`/${prog ? prog : ""}`} className="detailView">
+          <i className="las la-eye mr-2"></i> View Details
+        </Link>
+      </div>
     );
   }
 
   function Doctoral(props) {
     return (
-      <p className="d-md-flex form-control mt-4">
-        <select value={prog} onChange={progchanged}>
-          <option value="">Select programe</option>
-          {result_d?.map((data,index) => (
-            <option key={index} value={data?.id}> {data?.title} </option>
+      <div className="d-md-flex form-control mt-md-4">
+        <select className="selectpicker" value={prog} onChange={progchanged}>
+          <option value="">Select program</option>
+          {searchProgram.result_d?.map((data, index) => (
+            <option key={index} value={data?.slug}>
+              {data?.title}
+            </option>
           ))}
         </select>
         <span className="input-msg2"></span>
-        <Link to={`/programe-detail?id=${prog}`} className="detailView"><i className="las la-eye mr-2"></i>View Detail</Link>
-
-      </p>
+        <Link href={`/${prog ? prog : ""}`} className="detailView">
+          <i className="las la-eye mr-2"></i> View Details
+        </Link>
+      </div>
     );
   }
 
@@ -140,11 +129,14 @@ setProg(e.target?.value)
             <Row>
               <Col md="4">
                 <div className="formName">
-                  <h4> Find Your Programmes</h4>
+                  <h4> Find Your Program</h4>
                 </div>
               </Col>
-              <Col className="col-md-8 d-flex flex-wrap align-items-center" md="8">
-                <Row className="w-100">
+              <Col
+                className="col-md-8 flex-wrap align-items-center col-12"
+                md="8"
+              >
+                <Row className="">
                   <Col md="12">
                     <div className="progTabs">
                       <Tabs>
@@ -167,30 +159,18 @@ setProg(e.target?.value)
                           <div className="CourseList w-100">
                             <Doctoral />
                           </div>
-
                         </TabPanel>
                       </Tabs>
                     </div>
                   </Col>
-
                 </Row>
-
               </Col>
-
             </Row>
           </Form>
-
-
-
-
-
         </Container>
-
       </section>
-
     </Styles>
-  )
-
+  );
 };
 
 export default SearchProgram;

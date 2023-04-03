@@ -1,31 +1,38 @@
 {
-    "secTitle": "We Have Fantustic Team To Help Student And They Are Always Ready.",
-    "backgroundImage": "vd-bg.jpg",
-    "dataList": [
-        {
-            "id": "1",
-            "personImage": "img1.jpg",
-            "personName": "Ravi Dogra",
-            "personTitle": "MBA",
-            "dec": "The School of Management has provided me with opportunities to network with industry professionals that I will be able to continue to reach out to throughout my academic and professional careers",
-            "backgroundImage": "vd-bg.jpg"
-        },
-        {
-            "id": "2",
-            "personImage": "img1.jpg",
-            "personName": "Ravi Dogra",
-            "personTitle": "MBA",
-            "dec": "The School of Management has provided me with opportunities to network with industry professionals that I will be able to continue to reach out to throughout my academic and professional careers",
-            "backgroundImage": "vd-bg.jpg"
-            
-        },
-        {
-            "id": "3",
-            "personImage": "img1.jpg",
-            "personName": "Ravi Dogra",
-            "personTitle": "MBA",
-            "dec": "The School of Management has provided me with opportunities to network with industry professionals that I will be able to continue to reach out to throughout my academic and professional careers",
-            "backgroundImage": "vd-bg.jpg"
-        }
-    ]
+  "secTitle": "We Have Fantustic Team To Help Student And They Are Always Ready.",
+  "backgroundImage": "testimonial_2.webp",
+  "dataList": [
+    {
+      "id": "1",
+      "personImage": "Kavita.jpg",
+      "personName": "Kavita Thakur (MBA)",
+      "personTitle": "MBA",
+      "dec": "I have been placed with ICICI Bank, one of the top private sector banks in the country. I always dreamed of working in banks or financial sectors and Shoolini has made my dreams come true.",
+      "backgroundImage": "vd-bg.jpg"
+    },
+    {
+      "id": "2",
+      "personImage": "Rishab.jpeg",
+      "personName": "Rishab Sharma",
+      "personTitle": "MBA",
+      "dec": "The first step of my journey to success started with Shoolini University and has reached ICICI now. Thanks to campus placement that continued in the online mode in the present uncertain scenario, I got hired by one of the top banking companies.",
+      "backgroundImage": "vd-bg.jpg"
+    },
+    {
+      "id": "3",
+      "personImage": "Parul.jpeg",
+      "personName": "Parul Mittal (MBA)",
+      "personTitle": "MBA",
+      "dec": "The day I got selected with Hindustan Unilever Limited was the happiest day of my life. I can't thank Shoolini University enough to bring in such a big company and to provide us with such a great opportunity.",
+      "backgroundImage": "vd-bg.jpg"
+    },
+    {
+      "id": "4",
+      "personImage": "prachi.jpeg",
+      "personName": "Prachi Chauhan (B Com)",
+      "personTitle": "MBA",
+      "dec": "I entered the gates of Shoolini as a timid young girl and now Shoolini has transformed me into a confident professional.This has helped me to make my place in SCCNL.",
+      "backgroundImage": "vd-bg.jpg"
+    }
+  ]
 }

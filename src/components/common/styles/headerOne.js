@@ -1,5 +1,5 @@
-import styled from "styled-components";
-import { colors } from "../elements/elements";
+import styled from 'styled-components'
+import { colors } from '../elements/elements'
 export const Styles = styled.div`
     .top-bar {
         background: ${colors.bg1};
@@ -545,4 +545,4 @@ export const Styles = styled.div`
         }
     }
     
-`;
+`

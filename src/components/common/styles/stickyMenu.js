@@ -1,5 +1,5 @@
-import styled from "styled-components";
-import { colors } from "../elements/elements";
+import styled from 'styled-components'
+import { colors } from '../elements/elements'
 
 export const Styles = styled.div`
     .sticky-menu {
@@ -8,18 +8,29 @@ export const Styles = styled.div`
         top: 0;
         left: 0;
         width: 100%;
-        z-index: 11;
+        z-index: 999;
         animation: 300ms ease-in-out 0s normal none 1 fadeInDown;
         background: #ffffff;
         height: 75px;
         padding-top: 8px;
-        box-shadow: 0 0 20px -10px #222222;
+        box-shadow:0 0 30px 0px #2222221a;
 
 
+        .pxs-4
+        {
+            padding-left:2rem;
+            padding:right:2rem;
+        }
+        .logo a > span {
+            overflow: visible !important;
+        }
         img.brandLogo {
             width: 120px;
+            height: auto;
+            min-width: 140px !important;
+            min-height: 67px !important;
         }
-        
+         
         .logo {
             a {
                 img.SU-logo {
@@ -44,11 +55,11 @@ export const Styles = styled.div`
                     position: relative;
 
                     a.nav-link {
-                        font-size     : 14px;
                         color         : ${colors.black1};
+                        font-size: 12px;
                         text-transform: uppercase;
-                        font-weight   : 500;
-                        padding       : 20px 10px 20px;
+                        font-weight: 500;
+                        padding: 20px 7px 18px;
 
                         i {
                             font-size: 12px;
@@ -172,7 +183,7 @@ export const Styles = styled.div`
                     text-transform: uppercase;
                     font-weight   : 500;
                     padding       : 11px;
-                    border-radius : 0 5px 5px 0;
+                    border-radius :5px;
                     position: relative;
 
                     i {
@@ -210,6 +221,14 @@ export const Styles = styled.div`
         
         @media(max-width: 767px) {
             display: none;
+
+            
+        .pxs-4
+        {
+            padding-left:0.5rem;
+            padding:right:0.5rem;
+        }
+
         }
     }
-`;
+`

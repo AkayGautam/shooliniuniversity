@@ -1,20 +1,18 @@
 [
     {
-        "id": "1",
-        "backgroundImage": "slider-1.jpg",
-        "uniqClass": "slider-box slider-box1",
-        "title": "Think future at",
-        "desc": "India’s No.1 Research University",
-        "btnOneLink": "course-grid",
-        "btnTwoLink": "contact"
-    },
-    {
         "id": "2",
-        "backgroundImage": "slider-1.jpg",
+        "backgroundImage": "/assets/images/slide6.jpg",
         "uniqClass": "slider-box slider-box1",
         "title": "Think future at",
-        "desc": "India’s No.1 Research University",
+        "desc": "#1 Private University in India",
         "btnOneLink": "course-grid",
-        "btnTwoLink": "contact"
+        "btnTwoLink": "contact",
+        "subtitle": "Top 200 Worldwide",
+        "smallT" : "*351-400 Band; No.39 in Citations (World)",
+        "research": "No.1 in Physical Sciences | No.2 in Engineering"
     }
+   
+   
+    
+  
 ]

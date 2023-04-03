@@ -1,11 +1,7 @@
 import React from 'react'
 
 const Result = () => {
-    return (
-        <>
-            
-        </>
-    )
+  return <></>
 }
 
 export default Result

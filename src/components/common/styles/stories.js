@@ -1,11 +1,35 @@
-import styled from "styled-components";
+import styled from 'styled-components'
 
 export const Styles = styled.div`
     .stories-area {
                 background-size: 100% 100%;
                 padding: 0px 0;
                 height:100vh;
+                position: relative;
 
+
+                @media (min-width: 768px) and (max-width: 992px)
+{
+ .sec-title h2 {
+        font-size: 38px !important;
+}
+.bgImgSU2 {
+    background-position: 40% !important;
+}
+}
+
+
+
+                a.btnRedaas {
+                    display: block;
+                    border: 1px solid #fff;
+                    padding: 11px 20px !important;
+                    max-width: 170px;
+                    text-align: center;
+                    border-radius: 40px;
+                }
+
+                
         .full-wrap-red
         {
             background:#f02f2f;
@@ -61,7 +85,7 @@ export const Styles = styled.div`
                 }
 
         .sec-title h2 {
-            font-weight: 900;
+            font-weight: 700;
             font-size: 58px;
             text-transform: uppercase;
             color: #fff;
@@ -125,7 +149,7 @@ export const Styles = styled.div`
                 color: #fff;
                 font-size: 30px;
                 right: 20%;
-                bottom: 0;
+                top: 50%;
             }
 
             @media screen and (max-width:767px)
@@ -147,10 +171,34 @@ export const Styles = styled.div`
             
     }
     .bg-area2{
-        background: url(assets/images/st2.jpg) !important;
+        // background: url(assets/images/st2.jpg) !important;
     }
     .bg-area2:after
     {
         background: linear-gradient( 90deg ,transparent 50%, #f02f2f 50%);
     }
-`;
+
+
+
+    @media(max-width: 767px) {
+
+   .stories-area {
+    height: auto !important;
+}
+.bgImgSU, .full-wrap-red {
+    padding: 50px 0;
+}
+
+.bgImgSU {
+    position: relative;
+}
+ul.whyUs {
+    padding-left: 0;
+}
+.stories-area a.iconArrL {
+    padding-left: 0;
+}
+
+
+
+`

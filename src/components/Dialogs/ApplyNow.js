@@ -1,59 +1,52 @@
-import * as React from 'react';
-import Button from '@mui/material/Button';
-import TextField from '@mui/material/TextField';
-import Dialog from '@mui/material/Dialog';
-import DialogActions from '@mui/material/DialogActions';
-import DialogContent from '@mui/material/DialogContent';
-import DialogContentText from '@mui/material/DialogContentText';
-import DialogTitle from '@mui/material/DialogTitle';
+import * as React from 'react'
+import Button from '@mui/material/Button'
+import Dialog from '@mui/material/Dialog'
+import DialogContent from '@mui/material/DialogContent'
+import { Styles } from './dialogs'
+import Link from 'next/link'
 
 export default function ApplyNow() {
-  const [open, setOpen] = React.useState(false);
+  const [open, setOpen] = React.useState(false)
 
   const handleClickOpen = () => {
-    setOpen(true);
-  };
+    setOpen(true)
+  }
 
   const handleClose = () => {
-    setOpen(false);
-  };
+    setOpen(false)
+  }
+
+  React.useEffect(() => {
+    var s = document.createElement('script')
+    s.type = 'text/javascript'
+    s.async = true
+    s.src = 'https://widgets.nopaperforms.com/emwgts.js'
+    document.body.appendChild(s)
+
+    var MXLandingPageId = '8b8c0c2f-5e98-11ed-a19b-0acc9d8b1d02';
+
+  })
 
   return (
-    <div>
-      <Button className="slider-btn1" variant="outlined" onClick={handleClickOpen}>
-        Apply Now
-      </Button>
-      <Dialog open={open} onClose={handleClose}>
-        <DialogTitle>Subscribe</DialogTitle>
-        <DialogContent>
-          <DialogContentText>
-            To subscribe to this website, please enter your email address here. We
-            will send updates occasionally.
-          </DialogContentText>
-          <TextField
-            autoFocus
-            margin="dense"
-            id="name"
-            label="Name"
-            type="text"
-            fullWidth
-            variant="standard"
-          />
-           <TextField
-            autoFocus
-            margin="dense"
-            id="email"
-            label="Email Address"
-            type="email"
-            fullWidth
-            variant="standard"
-          />
-        </DialogContent>
-        <DialogActions>
-          <Button onClick={handleClose}>Cancel</Button>
-          <Button onClick={handleClose}>Apply Now</Button>
-        </DialogActions>
-      </Dialog>
-    </div>
-  );
+    <Styles>
+      <div>
+        <Button
+          className="slider-btn1 mr-2"
+          variant="outlined"
+          onClick={handleClickOpen}
+        >
+          Enquire
+        </Button>
+        <Dialog open={open} onClose={handleClose}>
+          <DialogContent className="p-3">
+              <iframe style={{width:'100%'}} name="leadsquared_landing_page_frame" src="https://shooliniuniversity.viewpage.co/Enquire-Now?ignoremxtracking=mxtrue" width="300" height="600" frameborder="0" marginwidth="0" marginheight="0" scrolling="no"></iframe>
+         
+            <Button className="btnHideForm" onClick={handleClose}>
+              X
+            </Button>
+          </DialogContent>
+        </Dialog>
+      </div>
+    </Styles>
+  )
 }

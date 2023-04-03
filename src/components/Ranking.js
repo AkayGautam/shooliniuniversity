@@ -1,119 +1,295 @@
-import React, { useEffect } from 'react';
-import Datas from '../data/faq-event/faq-event.json';
-import { Link } from 'react-router-dom';
-import { Container, Row, Col } from 'react-bootstrap';
+/* eslint-disable @next/next/no-img-element */
+import React, { useEffect } from "react";
+import Datas from "../data/faq-event/faq-event.json";
+import { Container, Row, Col } from "react-bootstrap";
 import { Styles } from "./common/styles/ranking";
-import Aos from 'aos';
-import 'aos/dist/aos.css';
+import Aos from "aos";
+import "aos/dist/aos.css";
+import Link from "next/link";
+import Image from "next/legacy/image";
 
 const Ranking = () => {
+  useEffect(() => {
+    Aos.init({ duration: 2000 });
+  }, []);
 
-    useEffect(() => {
-        Aos.init({duration:2000});
-       }, [])
+  useEffect(() => {
+    const accordionButton = document.querySelectorAll(".accordion-button");
+    accordionButton.forEach((button) => {
+      button.addEventListener("click", () => {
+        button.classList.toggle("active");
+        const content = button.nextElementSibling;
 
-    useEffect(() => {
-        const accordionButton = document.querySelectorAll(".accordion-button");
-        accordionButton.forEach(button => {
-            button.addEventListener("click", () => {
-                button.classList.toggle("active");
-                const content = button.nextElementSibling;
-
-                if (button.classList.contains("active")) {
-                    content.className = "accordion-content show";
-                    content.style.maxHeight = content.scrollHeight + "px";
-                } else {
-                    content.className = "accordion-content";
-                    content.style.maxHeight = "0";
-                }
-            });
-        });
+        if (button.classList.contains("active")) {
+          content.className = "accordion-content show";
+          content.style.maxHeight = content.scrollHeight + "px";
+        } else {
+          content.className = "accordion-content";
+          content.style.maxHeight = "0";
+        }
+      });
     });
+  });
 
-    return (
-        <Styles>
-            {/* Faq & Event */}
-            <section className="event-faq-area pt-0">
-                <Container>
-                    <Row>
-                    <Col md="5">
-                        <div data-aos="fade-right" className="sec-title">
-                            <h2>Think <br /> Ranking </h2>
-                            <h4> that matter - 2021-22 </h4>
+  return (
+    <Styles>
+      <section className="event-faq-area pt-0">
+        <Container>
+          <Row>
+            <Col md="12" lg="5">
+              <div className="sec-title">
+                <h2>
+                  Think <br /> Rankings{" "}
+                </h2>
+                <h4> Climbing High </h4>
+              </div>
+              <div className="introVDO">
+                <Image
+                  src={`/assets/images/thinkrank.webp`}
+                  alt="ranking_logo"
+                  className="img-fluid"
+                  width={700}
+                  height={700}
+                />
+              </div>
+            </Col>
+            <Col lg="7" md="12">
+              <div className="event-area vfvffv">
+                <Row>
+                  <Col md="12">
+                    {Datas.latestRanking.map((eventData, i) => (
+                      <div className="event-box pb-2 ddd  d-flex mb-3" key={i}>
+                        <div className="alignLefts_o">
+                          <div className="rankingYear">
+                            <p>{eventData.eventDate}</p>
+                          </div>
+                          <div className="rankingLogo">
+                            <Image
+                              src={`https://shooliniuniversity.com/assets/images/the-ranking.png`}
+                              alt="ranking_logo"
+                              className="img-fluid"
+                              width={170}
+                              height={50}
+                            />
+                          </div>
                         </div>
-                        <div data-aos="flip-up" className="introVDO">
-                        <iframe   src="https://www.youtube.com/embed/NdBAPZxr4Pg?controls=0" title="YouTube video player"  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" ></iframe>
+                        <div className="alignLefts">
+                          <div className="event-details">
+                            <h6>
+                              <a href="https://shooliniuniversity.com/news/shoolini-is-no1-private-university-in-india">
+                                {eventData.eventTitle}
+                              </a>
+                            </h6>
+
+                            <p style={{ margin: "0 0 0 0" }}>
+                              {eventData.eventdesc}
+                            </p>
+                            <p style={{ margin: "0" }}>
+                              {eventData.eventdesc1}
+                            </p>
+                            <p style={{ margin: "0" }}>
+                              {eventData.eventdesc2}
+                            </p>
+
+                            <p style={{ margin: "0" }}>
+                              <strong> {eventData.eventdesc4} </strong>
+                            </p>
+                            <p style={{ margin: "0" }}>
+                              {eventData.eventdesc5}
+                            </p>
+                            <p style={{ margin: "0" }}>
+                              <strong> {eventData.eventdesc6} </strong>{" "}
+                            </p>
+                            <p style={{ margin: "0" }}>
+                              {eventData.eventdesc7}
+                            </p>
+                          </div>
+                          <div className="seeMoreBtn">
+                            <a href="https://shooliniuniversity.com/news/shoolini-is-no1-private-university-in-india">
+                              See More
+                            </a>
+                          </div>
                         </div>
+                      </div>
+                    ))}
+                  </Col>
+                </Row>
+
+                <div className="event-area dddd pt-md-3 mt-0">
+                  <Row>
+                    <Col md="12">
+                      {Datas.eventDataListNew.map((eventData, i) => (
+                        <div className="event-box d-flex" key={i}>
+                          <div className="alignLefts_o">
+                            <div className="rankingYear">
+                              <p>{eventData.eventDate}</p>
+                            </div>
+                            {eventData.ranking_logo && (
+                              <div className="rankingLogo">
+                                <Image
+                                  src={`https://shooliniuniversity.com/assets/images/qs-rankingNew.png`}
+                                  alt="ranking_logo"
+                                  className="img-fluid"
+                                  width={170}
+                                  height={75}
+                                />
+                              </div>
+                            )}
+                          </div>
+                          <div className="alignLefts">
+                            <div className="event-details">
+                              <h6>
+                                <Link href="/news/qs-rankings-shoolini-ranks-3rd-top-private-university">
+                                  {eventData.eventTitle}
+                                </Link>
+                              </h6>
+
+                              <p>{eventData.eventdesc}</p>
+                            </div>
+                            <div className="seeMoreBtn">
+                              <Link href="/news/qs-rankings-shoolini-ranks-3rd-top-private-university">
+                                See More
+                              </Link>
+                            </div>
+                          </div>
+                        </div>
+                      ))}
                     </Col>
-                     <Col md="7">
-                            <div className="event-area">
-                                <Row>
-                                   
-                                    <Col md="12">
-                                        {
-                                            Datas.eventDataList.map((eventData, i) => (
-                                                <div className="event-box d-flex" key={i}>
-                                                    
-                                                    <div data-aos="fade-up" className="rankingYear">
-                                                        <p>{eventData.eventDate}</p>
-                                                    </div>
-                                                    <div className="rankingLogo">
-                                                    <img data-aos="fade-up" src={process.env.PUBLIC_URL + `/assets/images/${eventData.ranking_logo}`} alt="" className="img-fluid" />
-                                                     
-                                                    </div>
+                  </Row>
+                </div>
 
-                                                    <div className="event-details">
-                                                        <h6 data-aos="fade-up"><Link to={eventData.eventLink}>{eventData.eventTitle}</Link></h6>
-                                                       
-                                                        <p data-aos="fade-up">{eventData.eventdesc}</p>
-                                                    </div>
-                                                    <div data-aos="fade-up" className="seeMoreBtn">
-                                                        <Link to="/"> See More </Link>
-                                                    </div>
-                                                </div>
-                                            ))
-                                        }
-                                    </Col>
-                                </Row>
+                {/* <div className="event-area dedede pt-md-3 mt-0">
+                  <Row>
+                    <Col md="12">
+                      {Datas.eventDataList.map((eventData, i) => (
+                        <div className="event-box d-flex" key={i}>
+                          <div className="alignLefts_o">
+                            <div className="rankingYear">
+                              <p>{eventData.eventDate}</p>
                             </div>
-
-                            <div className="event-area mt-5">
-                                <Row>
-                                   
-                                    <Col md="12">
-                                        {
-                                            Datas.faqDataList.map((eventData, i) => (
-                                                <div data-aos="fade-up" className="event-box d-flex" key={i}>
-                                                    
-                                                    <div className="rankingYear">
-                                                        <p>{eventData.eventDate}</p>
-                                                    </div>
-                                                    <div className="rankingLogo">
-                                                    <img src={process.env.PUBLIC_URL + `/assets/images/${eventData.ranking_logo}`} alt="" className="img-fluid" />
-                                                     
-                                                    </div>
-
-                                                    <div className="event-details">
-                                                        <h6><Link to={eventData.eventLink}>{eventData.eventTitle}</Link></h6>
-                                                       
-                                                        <p>{eventData.eventdesc}</p>
-                                                    </div>
-                                                    <div className="seeMoreBtn">
-                                                        <Link to="/"> See More </Link>
-                                                    </div>
-                                                </div>
-                                            ))
-                                        }
-                                    </Col>
-                                </Row>
+                            <div className="rankingLogo">
+                              <img
+                                src={`/assets/images/${eventData.ranking_logo}`}
+                                alt="ranking_logo"
+                                className="img-fluid"
+                                loading="lazy"
+                              />
                             </div>
-                        </Col>
-                       
-                    </Row>
-                </Container>
-            </section>
-        </Styles>
-    ) 
-}
+                          </div>
+                          <div className="alignLefts">
+                            <div className="event-details">
+                              <h6>
+                                <Link href="/recognitions">
+                                  {eventData.eventTitle}
+                                </Link>
+                              </h6>
 
-export default Ranking
+                              <p>{eventData.eventdesc}</p>
+                            </div>
+                            <div className="seeMoreBtn">
+                              <Link href="/recognitions"> See More </Link>
+                            </div>
+                          </div>
+                        </div>
+                      ))}
+                    </Col>
+                  </Row>
+                </div> */}
+
+                <Row>
+                  <Col md="12">
+                    {Datas.eventDataList2.map((eventData, i) => (
+                      <div className="event-box d-flex" key={i}>
+                        <div className="alignLefts_o">
+                          <div className="rankingYear">
+                            <p>{eventData.eventDate}</p>
+                          </div>
+                          <div className="rankingLogo">
+                            <Image
+                              src={`https://shooliniuniversity.com/assets/images/the.png`}
+                              alt="ranking_logo"
+                              className="img-fluid"
+                              width={170}
+                              height={75}
+                            />
+                          </div>
+                        </div>
+                        <div className="alignLefts">
+                          <div className="event-details">
+                            <h6>
+                              <Link href="/news/shoolini-among-top-200-global-universities-in-the-world">
+                                {eventData.eventTitle}
+                              </Link>
+                            </h6>
+
+                            <p style={{ margin: "0 0 0 0" }}>
+                              {eventData.eventdesc}
+                            </p>
+                            <p style={{ margin: "0" }}>
+                              {eventData.eventdesc1}
+                            </p>
+                            <p>{eventData.eventdesc2}</p>
+                          </div>
+                          <div className="seeMoreBtn">
+                            <Link href="/news/shoolini-among-top-200-global-universities-in-the-world">
+                              See More
+                            </Link>
+                          </div>
+                        </div>
+                      </div>
+                    ))}
+                  </Col>
+                </Row>
+
+                <Row className="event-area mt-3">
+                  <Col md="12">
+                    {Datas.faqDataList.map((eventData, i) => (
+                      <div className="event-box d-flex" key={i}>
+                        <div className="alignLefts_o">
+                          <div className="rankingYear">
+                            <p>{eventData.eventDate}</p>
+                          </div>
+                          {eventData.ranking_logo && (
+                            <div className="rankingLogo">
+                              <img
+                                src={`/assets/images/${eventData.ranking_logo}`}
+                                alt="ranking_logo"
+                                className="img-fluid"
+                                width={170}
+                                height={75}
+                              />
+                            </div>
+                          )}
+                        </div>
+                        <div className="alignLefts">
+                          <div className="event-details">
+                            <h6>
+                              <Link href="/news/shoolini-retains-top-100-slot-in-nirf-rankings">
+                                {eventData.eventTitle}
+                              </Link>
+                            </h6>
+
+                            <p>{eventData.eventdesc}</p>
+                          </div>
+                          <div className="seeMoreBtn">
+                            <Link href="/news/shoolini-retains-top-100-slot-in-nirf-rankings">
+                              See More
+                            </Link>
+                          </div>
+                        </div>
+                      </div>
+                    ))}
+                  </Col>
+                </Row>
+
+              </div>
+
+            </Col>
+          </Row>
+        </Container>
+      </section>
+    </Styles>
+  );
+};
+
+export default Ranking;

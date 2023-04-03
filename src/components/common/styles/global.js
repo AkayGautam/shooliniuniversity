@@ -5,15 +5,13 @@ Author URL: http://snazzytheme.com/
 Version: 1.0
 ==============================================*/
 
-import { createGlobalStyle } from "styled-components";
-import { colors, fonts } from "../element/elements";
-
+import { createGlobalStyle } from 'styled-components'
+import { colors, fonts } from '../element/elements'
 
 import React from 'react'
 
 const GlobalStyle = () => {
-    return (
-       ` html {
+  return ` html {
         color      : ${colors.bg1};
         font-size  : 13px;
         line-height: 1.4;
@@ -163,7 +161,6 @@ const GlobalStyle = () => {
         margin-left : 0;
         margin-right: 0;
     }`
-    )
 }
 
 export default GlobalStyle

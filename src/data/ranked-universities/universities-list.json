@@ -1,0 +1,44 @@
+[   
+    {
+        "id": "1",
+        "Insitution": "Shoolini University  ",
+        "score": 2.27,
+        "citations": 8.2 ,
+        "publications": 9.3
+    },
+    {
+        "id": "2",
+        "Insitution": "University of Oxford      ",
+        "score": 2.12,
+        "citations": 7.1,
+        "publications": 3.8
+    },
+    {
+        "id": "3",
+        "Insitution": "University of Cambridge",
+        "score": 2.07,
+        "citations": 7.7,
+        "publications": 4.2
+    }, 
+    { 
+        "id": "4",
+        "Insitution": "MIT",
+        "score": 2.36  ,
+        "citations": 9.4,
+        "publications": 6.0
+    },
+    {
+        "id": "5",
+        "Insitution": "Princeton University",
+        "score": 2.9 ,
+        "citations": 8.0 ,
+        "publications": 4.9
+    },
+    {
+        "id": "6",
+        "Insitution": "Yale University",
+        "score": 2.04,
+        "citations": 7.2,
+        "publications": 4.1
+    }
+]

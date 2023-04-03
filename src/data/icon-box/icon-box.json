@@ -3,9 +3,9 @@
         "id": "1",
         "uniqClass": "box-icon box1",
         "boxIcon": "flaticon-thumbs-like",
-        "title": 3000,
+        "title": 5000,
         "subTitle": "Placements",
-        "showcase" : "in Top Companies " 
+        "showcase" : "100% in MBA | BTECH | HM" 
     },
     {
         "id": "2",
@@ -19,7 +19,7 @@
         "id": "3",
         "uniqClass": "box-icon box3",
         "boxIcon": "flaticon-teacher",
-        "title": 800,
+        "title": 1300,
         "subTitle": "Patents Filed",
         "showcase" : "Among the highest in India " 
     }

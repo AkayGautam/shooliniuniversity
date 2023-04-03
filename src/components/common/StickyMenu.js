@@ -1,121 +1,197 @@
-import React, { useEffect } from 'react';
-import { Link } from 'react-router-dom';
-import { Container, Row, Col } from 'react-bootstrap';
+import React, { useEffect, useState } from "react";
+import { Row, Col } from "react-bootstrap";
 import { Styles } from "./styles/stickyMenu";
+import Link from "next/link";
+import Image from "next/legacy/image";
 
-const StickyMenu = () => {
+const StickyMenu = ({ links }) => {
+  useEffect(() => {
+    window.addEventListener("scroll", () => {
+      const stickyMenu = document.querySelector(".sticky-menu");
 
-    useEffect(() => {
-        window.addEventListener("scroll", () => {
-            const stickyMenu = document.querySelector(".sticky-menu");
-
-            if (window.scrollY > 160) {
-                stickyMenu.classList.add("sticky");
-            } else {
-                stickyMenu.classList.remove("sticky");
-            }
-        });
+      if (window.scrollY > 160) {
+        stickyMenu?.classList.add("sticky");
+      } else {
+        stickyMenu?.classList.remove("sticky");
+      }
     });
+  });
 
+  return (
+    <>
+      <Styles>
+        <section className="sticky-menu">
+          <div className="container-fluid pxs-4">
+            <Row>
+              <Col md="2">
+                <div className="logo">
+                  <Link href={"/"}>
+                    <Image
+                      src={"/assets/images/logo.png"}
+                      alt=""
+                      className="brandLogo"
+                      width={200}
+                      height={50}
+                    />
+                  </Link>
+                </div>
+              </Col>
+              <Col md="10">
+                <div className="main-menu-box">
+                  <div className="menu-box d-flex justify-content-between">
+                    <ul className="nav menu-nav">
+                      {links &&
+                        links.map((row, index) => {
+                          return row?.sub_menu.length === 0 ? (
+                            <li
+                              className="nav-item dropdown active"
+                              key={index}
+                            >
+                              {row.text === "HOME" ? (
+                                <Link
+                                  href="/"
+                                  className="nav-link dropdown-toggle"
+                                >
+                                  {row.text}
+                                </Link>
+                              ) : (
+                                <Link
+                                  href={`/${row.link}`}
+                                  className="nav-link dropdown-toggle"
+                                  data-toggle="dropdown"
+                                >
+                                  {row.text}
+                                </Link>
+                              )}
 
-    return (
-        <>
-             <Styles>
-            {/* Sticky Menu */}
-            <section className="sticky-menu">
-            <Container>
-                        <Row>
+                              {row.text === "research" ? (
+                                                            <li> <Link
+                                                            href="https://research.shooliniuniversity.com/"
+                                                            className="nav-link dropdown-toggle newSearch"
+                                                            target={"_blank"}
+                                                          >
+                                                            {row.text}
+                                                          </Link>
+                                                          <ul className="dropdown list-unstyled"> 
+                                                            <li className="nav-item navItem_unpos">
+                                                            <Link className="nav-link dropdown-toggle" target="_blank" href="https://research.shooliniuniversity.com/Benchmarks">   Benchmarks     </Link>
+                                                                </li>
+                                                                <li className="nav-item navItem_unpos">
+                                                            <Link className="nav-link dropdown-toggle" target="_blank" href="https://research.shooliniuniversity.com/support-researchers">   Support for Researchers     </Link>
+                                                                </li>
+                                                                <li className="nav-item navItem_unpos">
+                                                            <Link className="nav-link dropdown-toggle" target="_blank" href="https://research.shooliniuniversity.com/scholarship">     Scholarships      </Link>
+                                                                </li>
+                                                                <li className="nav-item navItem_unpos">
+                                                            <Link className="nav-link dropdown-toggle" target="_blank" href="https://research.shooliniuniversity.com/phd-programmes">      PhD Programs        </Link>
+                                                                </li>
+                                                                <li className="nav-item navItem_unpos">
+                                                            <Link className="nav-link dropdown-toggle" target="_blank" href="https://research.shooliniuniversity.com/National-Calls">      Research Grants    </Link>
+                                                                </li>
+                                                          </ul>
+                                                          </li>
+                              ) : (
+                                <span> </span>
+                              )}
+                            </li>
+                          ) : (
+                            <li className="nav-item dropdown" key={index}>
+                              <Link
+                                href={row.link && `/${row.link}`}
+                                className="nav-link dropdown-toggle"
+                                data-toggle="dropdown"
+                              >
+                                {row.text} <i className="las la-angle-down"></i>
+                              </Link>
+                              <ul className="dropdown list-unstyled">
+                                {row?.sub_menu.map((sub, i) => {
+                                  return (
+                                    <li
+                                      className="nav-item navItem_unpos"
+                                      key={i}
+                                    >
+                                      {sub.text ===
+                                      "All Shoolini Faculty List" ? (
+                                        <Link
+                                          href={`${sub.link}`}
+                                          className="nav-link"
+                                        >
+                                          {sub.text}
+                                          {sub?.sub_menu?.length > 0 && (
+                                            <i className="las la-angle-down"></i>
+                                          )}
+                                        </Link>
+                                      ) : (
+                                        <Link
+                                          href={`/${sub.link}`}
+                                          className="nav-link"
+                                        >
+                                          {sub.text}
+                                          {sub?.sub_menu?.length > 0 && (
+                                            <i className="las la-angle-down"></i>
+                                          )}
+                                        </Link>
+                                      )}
 
-                        <Col md="2">
-                                <div className="logo">
-                                    <a to={process.env.PUBLIC_URL + "/"}><img className="brandLogo" src={process.env.PUBLIC_URL + "/assets/images/logo.png"} alt="" /></a> 
-                                </div>
-                            </Col>
-                            <Col md="10">
-                            <div className="main-menu-box">
-                                    <div className="menu-box d-flex justify-content-between">
-                                        <ul className="nav menu-nav">
-                                            <li className="nav-item dropdown active">
-                                            <Link to="/" className="nav-link dropdown-toggle"  data-toggle="dropdown">Home </Link>
-                                           </li>
-                                            <li className="nav-item dropdown">
-                                                
-                                                <Link to="" className="nav-link dropdown-toggle" data-toggle="dropdown">About <i className="las la-angle-down"></i></Link>
-                                                <ul className="dropdown list-unstyled"> 
-                                                <li className="nav-item"> <Link to="/about-us" className="nav-link">About Us</Link></li>
-                                                    <li className="nav-item"> <Link to="/vission-mission" className="nav-link">Vision & Mission</Link></li>
-                                                    <li className="nav-item"><Link to="/history" className="nav-link">History</Link></li>
-                                                </ul>
-                                            </li>
-                                            <li className="nav-item dropdown">
-                                                <Link to="" className="nav-link dropdown-toggle"  data-toggle="dropdown">Programmes <i className="las la-angle-down"></i></Link>
-                                                <ul className="dropdown list-unstyled">
-                                                    <li className="nav-item"><Link to="/undergraduate-programs" className="nav-link">Undergraduates</Link></li>
-                                                    <li className="nav-item"><Link to ="/postgraduate-programs" className="nav-link">Postgraduate</Link></li>
-                                                    <li className="nav-item"><Link to="/doctoral-programs" className="nav-link">Doctoral</Link></li>
-                                                </ul>
-                                            </li>
-                                            <li className="nav-item dropdown">
-                                            <Link to="" className="nav-link dropdown-toggle"  data-toggle="dropdown">Admission <i className="las la-angle-down"></i></Link>
-                                            <ul className="dropdown list-unstyled">
-                                                    <li className="nav-item"><Link to="/admission-process" className="nav-link">Admission Process</Link></li>
-                                                    <li className="nav-item"><Link to="/scholarships" className="nav-link" >Scholarship</Link></li>
-                                                    <li className="nav-item"><Link to="/shoolini-university-fee-structure" className="nav-link" >Fee Structure</Link></li>
-                                                    <li className="nav-item"><Link to="/our-education-system" className="nav-link" >Our Education System</Link></li>
-                                                    <li className="nav-item"><Link to="/ghs-hostels" className="nav-link" >Hostels</Link></li>
-                                                </ul>
-                                            </li>
-                                            <li className="nav-item dropdown">
-                                            <Link to="" className="nav-link dropdown-toggle"  data-toggle="dropdown">Research <i className="las la-angle-down"></i></Link>
-                                                <ul className="dropdown list-unstyled">
-                                                    <li className="nav-item"><a className="nav-link">Patents</a></li>
-                                                    <li className="nav-item"><a className="nav-link" >Research Publication</a></li>
-                                                    <li className="nav-item"><a className="nav-link">Research Centres</a></li>
-                                                    <li className="nav-item"><a className="nav-link">Research Lab</a></li>
-                                                </ul>
-                                            </li>
-                                            <li className="nav-item dropdown">
-                                            <Link to="" className="nav-link dropdown-toggle"  data-toggle="dropdown">Faculty <i className="las la-angle-down"></i></Link>
-                                                <ul className="dropdown list-unstyled">
-                                                    <li className="nav-item"><a className="nav-link">Science</a></li>
-                                                    <li className="nav-item"><a className="nav-link" >Agriculture</a></li>
-                                                    <li className="nav-item"><a className="nav-link">School of Law</a></li>
-                                                    <li className="nav-item"><a className="nav-link">All Faculty List</a></li>
-                                                </ul>
-                                            </li>
-                                            <li className="nav-item">
-                                            <Link to="/placements" className="nav-link" >Placements </Link>
-                                             
-                                            </li>
-                                           
-                                            <li className="nav-item dropdown">
-                                            <Link to="" className="nav-link dropdown-toggle"  data-toggle="dropdown">Campus <i className="las la-angle-down"></i></Link>
-                                                <ul className="dropdown list-unstyled">
-                                                    <li className="nav-item"><Link to="/infrastructure" className="nav-link" >Infrastructure</Link></li>
-                                                    <li className="nav-item"><Link to="/community-building-programmes" className="nav-link">Community Programme</Link></li>
-                                                    <li className="nav-item"><Link to="/" className="nav-link" >Clubs & Socity</Link></li>
-                                                    <li className="nav-item"><Link to="/sports" className="nav-link" >Sports</Link></li>
-                                                    <li className="nav-item"><Link to="/" className="nav-link" >Excursions</Link></li>
-                                                </ul>
-                                            </li>
+                                      {sub?.sub_menu?.length > 0 && (
+                                        <ul className="dropdown_Last list-unstyled">
+                                          {sub.sub_menu.map((submenu, idx) => {
+                                            return (
+                                              <li
+                                                className="nav-item"
+                                                key={idx}
+                                              >
+                                                {submenu.text ===
+                                                "Test Page" ? (
+                                                  <Link
+                                                    href={`${submenu.link}`}
+                                                    className="nav-link"
+                                                  >
+                                                    {submenu.text}
+                                                  </Link>
+                                                ) : (
+                                                  <Link
+                                                    href={`/${submenu.link}`}
+                                                    className="nav-link"
+                                                  >
+                                                    {submenu.text}
+                                                  </Link>
+                                                )}
+                                              </li>
+                                            );
+                                          })}
                                         </ul>
-                                        <ul className="nav search-cart-bar">
-                                        <li className="nav-item side-box">
-                                            <div className="apply-btn">
-                                                <a><i className="las la-clipboard-list"></i>Apply Now</a>
-                                            </div>
-                                            </li>
-                                            
-                                        </ul>
-                                    </div>
-                                </div>
-                            </Col>
-                        </Row>
-                    </Container>
-            </section>
-        </Styles> 
-        </>
-    )
-}
+                                      )}
+                                    </li>
+                                  );
+                                })}
+                              </ul>
+                            </li>
+                          );
+                        })}
+                    </ul>
+                    <ul className="nav search-cart-bar">
+                      <li className="nav-item side-box">
+                        <div className="apply-btn">
+                          <a
+                            href="https://admissions.shooliniuniversity.com"
+                            target="_blank"
+                            rel="noreferrer"
+                          >
+                            Apply Now
+                          </a>
+                        </div>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </Col>
+            </Row>
+          </div>
+        </section>
+      </Styles>
+    </>
+  );
+};
 
-export default StickyMenu
+export default StickyMenu;

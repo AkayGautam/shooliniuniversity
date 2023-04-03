@@ -1,197 +1,371 @@
-import React, { useEffect } from 'react';
-import { Link } from 'react-router-dom';
-import { Container, Row, Col } from 'react-bootstrap';
+/* eslint-disable @next/next/no-img-element */
+import React, { useEffect, useState } from "react";
+import { Container, Row, Col, Dropdown } from "react-bootstrap";
 import { Styles } from "./styles/mobilemenu";
+import Link from "next/link";
+import Image from "next/legacy/image";
+import Search from "./Search";
+import SearchResearcher from "../SearchResearcher";
 
-const MobileMenu = () => {
-    useEffect(() => {
-        // Mobile Menu
-        const hmBtn = document.getElementById("mb-sidebar-btn");
+const MobileMenu = ({ links }) => {
+  const [visible, setVisible] = useState(false);
+  const [opened, setOpened] = useState(false);
+  const [Data, setData] = useState([]);
+  const [openSubMenu, setOpenSubMenu] = useState(false);
+  const [searchTerm, setSearchTerm] = useState(null);
 
-        if (hmBtn) {
-            const mdSidebarOverlay = document.getElementById("mb-sidebar-overlay");
-            const mdSidebarBody = document.getElementById("mb-sidebar-body");
-            const mdSidebarExit = document.getElementById("close-mb-sidebar");
+  useEffect(() => {
+    const hmBtn = window.document.getElementById("mb-sidebar-btn");
 
-            hmBtn.addEventListener("click", function (e) {
-                e.preventDefault();
-                mdSidebarOverlay.classList.toggle("visible");
-                mdSidebarBody.classList.toggle("opened");
-            });
+    if (hmBtn) {
+      const mdSidebarOverlay =
+        window.document.getElementById("mb-sidebar-overlay");
+      const mdSidebarBody = window.document.getElementById("mb-sidebar-body");
+      const mdSidebarExit = window.document.getElementById("close-mb-sidebar");
 
-            mdSidebarOverlay.addEventListener("click", function (e) {
-                e.preventDefault();
-                mdSidebarOverlay.classList.remove("visible");
-                mdSidebarBody.classList.remove("opened");
-            });
+      hmBtn.addEventListener("click", function (e) {
+        e.preventDefault();
+      });
+    }
 
-            mdSidebarExit.addEventListener("click", function (e) {
-                e.preventDefault();
-                mdSidebarOverlay.classList.remove("visible");
-                mdSidebarBody.classList.remove("opened");
-            });
+    const menuButton = document.querySelectorAll(".mb-menu-button");
+    menuButton.forEach((button) => {
+      button.addEventListener("click", () => {
+        button.classList.toggle("active");
+        const content = button.nextElementSibling;
+
+        if (button.classList.contains("active")) {
+          content.className = "mb-menu-content show";
+          content.style.maxHeight = content.scrollHeight + "px";
+        } else {
+          content.className = "mb-menu-content";
+          content.style.maxHeight = "0";
         }
-
-        // Menu Accordion -----------------
-        const menuButton = document.querySelectorAll(".mb-menu-button");
-        menuButton.forEach(button => {
-            button.addEventListener("click", () => {
-                button.classList.toggle("active");
-                const content = button.nextElementSibling;
-
-                if (button.classList.contains("active")) {
-                    content.className = "mb-menu-content show";
-                    content.style.maxHeight = content.scrollHeight + "px";
-                } else {
-                    content.className = "mb-menu-content";
-                    content.style.maxHeight = "0";
-                }
-            });
-        });
+      });
     });
+  });
 
-    return (
-        <>
-                 <Styles>
-            {/* Mobile Menu */}
-            <section className="mobile-menu-area">
-                <Container>
-                    <Row>
-                        <Col md="0" sm="12">
-                            <div className="mb-topbar d-flex justify-content-between">
-                                <div className="topbar-item">
-                                    <p><i className="las la-phone"></i>+1 (396) 486 4709</p>
-                                </div>
-                                <div className="topbar-item">
-                                    <ul className="list-unstyled list-inline">
-                                        <li className="list-inline-item"><Link to={process.env.PUBLIC_URL + "/login"}>Log In</Link></li>
-                                        <li className="list-inline-item">/</li>
-                                        <li className="list-inline-item"><Link to={process.env.PUBLIC_URL + "/registration"}>Register</Link></li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div className="mb-logo-area d-flex justify-content-between">
-                                <div className="mb-logo-box d-flex">
-                                    <div className="hm-button">
-                                        <a href={process.env.PUBLIC_URL + "/"} id="mb-sidebar-btn">
-                                            <i className="las la-bars"></i>
-                                        </a>
-                                    </div>
-                                    <div className="mb-logo">
-                                        <Link to={process.env.PUBLIC_URL + "/"}><img src={process.env.PUBLIC_URL + "/assets/images/f-logo.png"} alt="" /></Link>
-                                    </div>
-                                </div>
-                                <div className="mb-search-box">
-                                    <form action="#">
-                                        <input type="text" name="search" placeholder="Search Here" />
-                                        <button type="submit"><i className="las la-search"></i></button>
-                                    </form>
-                                </div>
-                            </div>
-                        </Col>
-                    </Row>
-                </Container>
-            </section>
+  const toggleMenu = () => {
+    setVisible(!visible);
+    setOpened(!opened);
+  };
 
-            {/* Mobile Menu Sidebar */}
-            <section className="mb-sidebar" id="mb-sidebar-body">
-                <div className="mb-sidebar-heading d-flex justify-content-between">
-                    <div><h5>Menu</h5></div>
-                    <div><a href={process.env.PUBLIC_URL + "/"} id="close-mb-sidebar"><i className="las la-times"></i></a></div>
+  const searchHandler = async (e) => {
+    console.log(searchTerm);
+    e.preventDefault();
+  };
+
+  return (
+    <>
+      <Styles>
+        {/* Mobile Menu */}
+        <section className="mobile-menu-area">
+          <Container>
+            <Row>
+              <Col md="0" sm="12">
+                <div className="mb-topbar d-flex justify-content-between">
+                  <div className="topbar-item">
+                    <p>
+                      <i className="las la-phone"></i>+1 (396) 486 4709
+                    </p>
+                  </div>
+                  <div className="topbar-item">
+                    <ul className="list-unstyled list-inline">
+                      <li className="list-inline-item">
+                        <Link href={"/login"}>Log In</Link>
+                      </li>
+                      <li className="list-inline-item">/</li>
+                      <li className="list-inline-item">
+                        <Link href={"/registration"}>Register</Link>
+                      </li>
+                    </ul>
+                  </div>
                 </div>
-                <div className="mb-sidebar-menu">
-                    <div className="mb-menu-item">
-                        <button className="mb-menu-button active">
-                            <p>Home <i className="las la-plus"></i></p>
-                        </button>
-                        <div className="mb-menu-content show">
-                            <ul className="list-unstyled">
-                                <li><Link to={process.env.PUBLIC_URL + "/"}>Home Style 1</Link></li>
-                                <li><Link to={process.env.PUBLIC_URL + "/home-two"}>Home Style 2</Link></li>
-                            </ul>
-                        </div>
+                <div className="mb-logo-area d-flex justify-content-between">
+                  <div className="mb-logo-box d-flex">
+                    <div className="hm-button" onClick={toggleMenu}>
+                      <a href={"/"} id="mb-sidebar-btn">
+                        <i className="fa fa-bars" aria-hidden="true"></i>
+                      </a>
                     </div>
-                    <div className="mb-menu-item">
-                        <button className="mb-menu-button active">
-                            <p>Pages <i className="las la-plus"></i></p>
-                        </button>
-                        <div className="mb-menu-content show">
-                            <ul className="list-unstyled">
-                                <li><Link to={process.env.PUBLIC_URL + "/about"}>About Us</Link></li>
-                                <li><Link to={process.env.PUBLIC_URL + "/gallery"}>Gallery</Link></li>
-                                <li><Link to={process.env.PUBLIC_URL + "/login"}>Log In</Link></li>
-                                <li><Link to={process.env.PUBLIC_URL + "/registration"}>Registration</Link></li>
-                                <li><Link to={process.env.PUBLIC_URL + "/contact"}>Contact</Link></li>
-                                <li><Link to={process.env.PUBLIC_URL + "/faq"}>Faq</Link></li>
-                                <li><Link to={process.env.PUBLIC_URL + "/404"}>404</Link></li>
-                                <li><Link to={process.env.PUBLIC_URL + "/coming-soon"}>Coming Soon</Link></li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div className="mb-menu-item">
-                        <button className="mb-menu-button active">
-                            <p>Courses <i className="las la-plus"></i></p>
-                        </button>
-                        <div className="mb-menu-content show">
-                            <ul className="list-unstyled">
-                                <li><Link to={process.env.PUBLIC_URL + "/course-grid"}>Course Grid</Link></li>
-                                <li><Link to={process.env.PUBLIC_URL + "/course-list"}>Course List</Link></li>
-                                <li><Link to={process.env.PUBLIC_URL + "/course-details"}>Course Details</Link></li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div className="mb-menu-item">
-                        <button className="mb-menu-button">
-                            <p>Instructor <i className="las la-plus"></i></p>
-                        </button>
-                        <div className="mb-menu-content">
-                            <ul className="list-unstyled">
-                                <li><Link to={process.env.PUBLIC_URL + "/instructor"}>Instructors</Link></li>
-                                <li><Link to={process.env.PUBLIC_URL + "/instructor-details"}>Instructor Details</Link></li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div className="mb-menu-item">
-                        <button className="mb-menu-button">
-                            <p>Event <i className="las la-plus"></i></p>
-                        </button>
-                        <div className="mb-menu-content">
-                            <ul className="list-unstyled">
-                                <li><Link to={process.env.PUBLIC_URL + "/events"}>Events</Link></li>
-                                <li><Link to={process.env.PUBLIC_URL + "/event-details"}>Event Details</Link></li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div className="mb-menu-item">
-                        <button className="mb-menu-button">
-                            <p>Blog <i className="las la-plus"></i></p>
-                        </button>
-                        <div className="mb-menu-content">
-                            <ul className="list-unstyled">
-                                <li><Link to={process.env.PUBLIC_URL + "/blog-classic"}>Blog Classic</Link></li>
-                                <li><Link to={process.env.PUBLIC_URL + "/blog-grid"}>Blog Grid</Link></li>
-                                <li><Link to={process.env.PUBLIC_URL + "/blog-details"}>Blog Details</Link></li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div className="mb-menu-item">
-                        <button className="mb-menu-button">
-                            <p>Shop <i className="las la-plus"></i></p>
-                        </button>
-                        <div className="mb-menu-content">
-                            <ul className="list-unstyled">
-                                <li><Link to={process.env.PUBLIC_URL + "/products"}>Products</Link></li>
-                                <li><Link to={process.env.PUBLIC_URL + "/product-details"}>Product Details</Link></li>
-                                <li><Link to={process.env.PUBLIC_URL + "/cart"}>Cart</Link></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </section>
-            <div className="mb-sidebar-overlay" id="mb-sidebar-overlay"></div>
-        </Styles>
-        </>
-    )
-}
 
-export default MobileMenu
+                    <div className="mb-logo">
+                      <Link href={"/"}>
+                        <Image
+                          src={"/assets/images/f-logo.png"}
+                          width={100}
+                          height={50}
+                          alt="logo"
+                        />
+                      </Link>
+                    </div>
+                  </div>
+                  <div className="mb-search-box">
+
+                    <div className="searchMobile">
+                      <SearchResearcher />
+                    </div>
+
+                    {/* <form action="#">
+                      <input
+                        type="text"
+                        name="search"
+                        onChange={(e) => setSearchTerm(e.target.value)}
+                        autoComplete="off"
+                        placeholder="Search Here"
+                      />
+                      
+                     
+                      {/* <button onClick={searchHandler} type="submit">
+                       
+                        <i className="las la-search"></i>
+                      </button> 
+                    </form> */}
+                  </div>
+                </div>
+              </Col>
+            </Row>
+          </Container>
+        </section>
+
+        {/* Mobile Menu Sidebar */}
+        <section
+          className={`mb-sidebar ${opened ? "opened" : ""}`}
+          id="mb-sidebar-body"
+        >
+          <div className="mb-sidebar-heading d-flex justify-content-between">
+            <div>
+              <h5>Menu</h5>
+            </div>
+            <div></div>
+          </div>
+          <div className="mb-sidebar-menu">
+            {links &&
+              links.map((item, index) => {
+                return (
+                  <div className="mb-menu-item" key={index}>
+                    <button className="mb-menu-button active">
+                      {item.sub_menu.length > 0 ? (
+                        <p>
+                          {item.text}
+                          <i className="fa fa-caret-down" aria-hidden="true"></i>
+                         
+
+                        </p>
+                      ) : (
+                        <>
+                          {item.text === "HOME" ? (
+                            <Link href="/">{item.text}</Link>
+                          ) : (
+                            <Link href={`/${item.link}`}>{item.text}</Link>
+                          )}
+
+                          {item.text === "research" ? (
+                            
+                            <Link  className="xs-display"   href="https://research.shooliniuniversity.com/"
+                            target="_blank" >{item.text}
+                            </Link>
+                          ) : (
+                            <span> </span>
+                          )}
+
+                        </>
+                      )}
+                    </button>
+                    {item.sub_menu.length > 0 ? (
+                      <div className="mb-menu-content">
+                        <ul className="list-unstyled">
+                          {item.sub_menu.map((row, sub_index) => {
+                            return (
+                              <li className="nav-item" key={sub_index}>
+
+
+                                <Link className="bottmDropdown" href={`/${row.link.replace("/", "")}`}>
+                                 <span className="rowText"> {row.text}  </span>
+
+                                  {row?.sub_menu?.length > 0 && (
+                                    <i className="fa fa-caret-down" aria-hidden="true"
+                                      style={{ paddingLeft: "50px" }}
+                                      onClick={() =>
+                                        setOpenSubMenu(!openSubMenu)
+                                      }
+                                    ></i>
+                                  )}
+                                </Link>
+                                <ul
+                                  className={`mb-menu-content list-unstyled ${openSubMenu && "show"
+                                    }`}
+                                >
+                                  {row?.sub_menu &&
+                                    row?.sub_menu.map(
+                                      (sub_row, sub_sub_index) => {
+                                        return (
+                                          <li
+                                            className="nav-item"
+                                            key={sub_sub_index}
+                                          >
+                                            <Link
+                                              href={`/${sub_row.link.replace(
+                                                "/",
+                                                ""
+                                              )}`}
+                                            >
+                                              <span
+                                                style={{
+                                                  paddingLeft: "20px",
+                                                }}
+                                              >
+                                                {sub_row.text}
+                                              </span>
+                                            </Link>
+                                          </li>
+                                        );
+                                      }
+                                    )}
+                                </ul>
+                              </li>
+                            );
+                          })}
+                        </ul>
+                      </div>
+                    ) : (
+                      ""
+                    )}
+                  </div>
+                );
+              })}
+
+            <div className="mb-menu-item">
+              <button className="mb-menu-button active">
+                <p>SU Students </p>
+              </button>
+              <div className="mb-menu-content show">
+                <ul className="list-unstyled">
+                  <li className="list-inline-item">
+                    <Link target="_blank" href="/blog">
+                      Blogs
+                    </Link>
+                  </li>
+
+                  <li className="list-inline-item">
+                    <Link href="/Internship">Internship</Link>
+                  </li>
+
+                  <li className="list-item">
+                    <a
+                      target="_blank"
+                      href="https://my.shooliniuniversity.com/"
+                      rel="noreferrer"
+                    >
+                      SU Students
+                    </a>
+                  </li>
+                  <li className="list-item">
+                    <a
+                      target="_blank"
+                      href="https://alumni.shooliniuniversity.com/"
+                      rel="noreferrer"
+                    >
+                      Alumni
+                    </a>
+                  </li>
+                  <li className="list-item">
+                    <a target="_blank" href="/national-academic-depository">
+                      UGC-NAD
+                    </a>
+                  </li>
+                  <li className="list-item">
+                    <Dropdown>
+                      <Dropdown.Toggle id="456" as="a">
+                        Online Payment
+                      </Dropdown.Toggle>
+                      <Dropdown.Menu as="ul">
+                        <Dropdown.Item as="li">
+                          <a
+                            target="_blank"
+                            href="https://shooliniuniversity.com/media/pay"
+                            rel="noreferrer"
+                          >
+                            {" "}
+                            Pay Tuition Fee{" "}
+                          </a>{" "}
+                        </Dropdown.Item>
+                        <Dropdown.Item as="li">
+                          <a
+                            target="_blank"
+                            href="https://easypay.axisbank.co.in/easyPay/makePayment?mid=NDcwNjg%3D"
+                            rel="noreferrer"
+                          >
+                            {" "}
+                            Pay Hostel Fee{" "}
+                          </a>{" "}
+                        </Dropdown.Item>
+                      </Dropdown.Menu>
+                    </Dropdown>
+                  </li>
+                  <li className="list-item">
+                    <Dropdown>
+                      <Dropdown.Toggle id="458" as="a">
+                        Ranking
+                      </Dropdown.Toggle>
+                      <Dropdown.Menu as="ul">
+                        <Dropdown.Item as="li">
+                          <a
+                            target="_blank"
+                            href="https://shooliniuniversity.com/nba"
+                            rel="noreferrer"
+                          >
+                            {" "}
+                            NBA{" "}
+                          </a>{" "}
+                        </Dropdown.Item>
+                        <Dropdown.Item as="li">
+                          <a
+                            target="_blank"
+                            href="https://shooliniuniversity.com/naac-self-study-report"
+                            rel="noreferrer"
+                          >
+                            NAAC
+                          </a>
+                        </Dropdown.Item>
+                        <Dropdown.Item as="li">
+                          <a
+                            target="_blank"
+                            href="https://shooliniuniversity.com/nirf"
+                            rel="noreferrer"
+                          >
+                            {" "}
+                            NIRF{" "}
+                          </a>{" "}
+                        </Dropdown.Item>
+                        <Dropdown.Item as="li">
+                          <a
+                            target="_blank"
+                            href="https://shooliniuniversity.com/iqac"
+                            rel="noreferrer"
+                          >
+                            {" "}
+                            IQAC{" "}
+                          </a>{" "}
+                        </Dropdown.Item>
+                      </Dropdown.Menu>
+                    </Dropdown>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </section>
+        <div
+          className={`mb-sidebar-overlay ${visible ? " visible" : ""}`}
+          id="mb-sidebar-overlay"
+          onClick={toggleMenu}
+        ></div>
+
+        
+      </Styles>
+    </>
+  );
+};
+
+export default MobileMenu;
